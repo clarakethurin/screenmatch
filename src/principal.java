@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alurascreenmatch.modelos.Filme;
 import br.com.alurascreenmatch.modelos.Serie;
 
@@ -24,6 +25,16 @@ public class principal {
         lost.setMinutosPorEpisodio(160);
         System.out.println("Duração da série: " + lost.getDuracaoEmMinutos());
 
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento(2005);
+        outroFilme.setDuracaoEmMinutos(250);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(lost);
+        System.out.println(calculadora.getTempoTotal());
     }
 
 
